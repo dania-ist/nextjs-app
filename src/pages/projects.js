@@ -1,9 +1,13 @@
 import Head from "next/head";
+
 import DefaultLayout from "@/components/default-layout";
-import HomeBody from "@/components/pages/home/HomeBody";
+import LinkBackHome from "@/components/layout/LinkBackHome";
+import AllProjectBody from "@/components/pages/projects/AllProjectBody";
+import EllipseShapeLandingTwoBottomRight from "@/components/layout/EllipseShapeLandingTwoBottomRight";
 import AfterEffect from "@/components/layout/AfterEffect";
 
-export default function Home() {
+
+export default function Projects() {
   return (
     <>
       <Head>
@@ -13,16 +17,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container">
-        <div className="pt-xxl-5 pt-4"></div>
-        <HomeBody />
+        <LinkBackHome />
+        <AllProjectBody />
       </div>
-      <AfterEffect/>
-      <div className="ellipse-top-left z-0"></div>
-      <div className="ellipse-bottom-right z-0"></div>
+      <div className="about-top-left-element"></div>
+      <AfterEffect />
+      <EllipseShapeLandingTwoBottomRight />
     </>
   );
 }
-Home.getLayout = function getLayout(page) {
+Projects.getLayout = function getLayout(page) {
   return (
     <DefaultLayout>
       {page}
